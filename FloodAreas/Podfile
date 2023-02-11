@@ -1,0 +1,32 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'FloodAreas' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for FloodAreas
+  
+  #MARK: - Network
+  pod 'Moya/RxSwift', '~> 14.0'
+  
+  #MARK: - Rx
+  pod 'RxSwift'
+  pod 'RxCocoa'
+  pod 'RxRelay'
+  pod 'RxReachability'
+  pod 'RxDataSources'
+  
+  #MARK: - Util
+  pod 'SnapKit', '5.6.0'
+
+  target 'FloodAreasTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'FloodAreasUITests' do
+    # Pods for testing
+  end
+
+end
