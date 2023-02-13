@@ -8,10 +8,18 @@
 import Foundation
 import RxSwift
 
-protocol ViewControllerProtocol {
+protocol ViewControllerCustomViewProtocol {
     func setupView()
+}
 
+protocol ViewControllerViewModelProtocol {
     func setupViewModel()
+}
+
+protocol ListViewControllerProtocol {
+    func registerCell()
+
+    func configDataSource()
 }
 
 protocol ViewModelProtocol {

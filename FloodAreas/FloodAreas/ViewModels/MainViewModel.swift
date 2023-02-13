@@ -13,7 +13,6 @@ class MainViewModel: ViewModelProtocol {
     typealias Dependency = AppAPIService
     
     struct Input {
-        
         // Data
         let floodAreaData               : BehaviorRelay<[BehaviorRelay<FloodArea>]>
         
@@ -21,7 +20,6 @@ class MainViewModel: ViewModelProtocol {
         let loadFloodAreaDataTrigger    : PublishRelay<()>
         
         let isLoading                   : BehaviorRelay<(Bool,String)>
-        
     }
     
     struct Output  {
