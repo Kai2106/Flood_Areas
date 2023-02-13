@@ -64,6 +64,14 @@ class DetailViewController: BaseViewController {
         return lbl
     }()
     
+    lazy var diversionsLabel: UILabel = {
+        let lbl = UILabel()
+        lbl.translatesAutoresizingMaskIntoConstraints = false
+        lbl.text = "Diversions: "
+        lbl.numberOfLines = 3
+        return lbl
+    }()
+    
     var viewModel: DetailViewModel?
     
     override func viewDidLoad() {
@@ -100,6 +108,7 @@ extension DetailViewController: ViewControllerViewModelProtocol {
                 self.mainStresstLabel.text! += data.properties?.roads?.first?.mainStreet ?? ""
                 self.adviceLabel.text! += data.properties?.adviceA ?? ""
                 self.otherAdviceLabel.text! += data.properties?.otherAdvice ?? ""
+                self.diversionsLabel.text! += data.properties?.diversions ?? ""
                 
                 // show on map.
                 if let coordinates = data.geometry?.coordinates{

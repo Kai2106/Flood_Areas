@@ -47,6 +47,7 @@ extension DetailViewController: ViewFactoryProtocol {
         self.contentView.addSubview(self.mainStresstLabel)
         self.contentView.addSubview(self.adviceLabel)
         self.contentView.addSubview(self.otherAdviceLabel)
+        self.contentView.addSubview(self.diversionsLabel)
         
         self.subStrubLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(Constants.MARGIN_TOP)
@@ -68,6 +69,12 @@ extension DetailViewController: ViewFactoryProtocol {
         }
         
         self.otherAdviceLabel.snp.makeConstraints { make in
+            make.right.equalToSuperview().offset(Constants.MARGIN_RIGHT)
+            make.left.equalToSuperview().offset(Constants.MARGIN_LEFT)
+            make.bottom.equalTo(self.diversionsLabel.snp.top).offset(Constants.MARGIN_BOTTOM)
+        }
+        
+        self.diversionsLabel.snp.makeConstraints { make in
             make.right.equalToSuperview().offset(Constants.MARGIN_RIGHT)
             make.left.equalToSuperview().offset(Constants.MARGIN_LEFT)
             make.bottom.lessThanOrEqualTo(self.contentView.snp.bottom).offset(Constants.MARGIN_BOTTOM)
