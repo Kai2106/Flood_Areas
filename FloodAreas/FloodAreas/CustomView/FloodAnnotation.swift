@@ -7,6 +7,6 @@
 
 import MapKit
 
-class FloodAnnotation: MKPointAnnotation {
+final class FloodAnnotation: MKPointAnnotation {
     var myFeature: Feature?
 }

@@ -68,20 +68,30 @@ extension MapViewController: ViewControllerViewModelProtocol {
 
 // MARK: MKMapView Delegate.
 extension MapViewController: MKMapViewDelegate {
-    // MARK: - change default icon
+    
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        let identifier = "mapview_annotation"
-        var view: MKPinAnnotationView
-        if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKPinAnnotationView {
-            dequeuedView.annotation = annotation
-            view = dequeuedView
-        } else {
-            view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+        if let item = annotation as? FloodAnnotation {
+            let annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: "mapItem")
+            ?? MKAnnotationView(annotation: annotation, reuseIdentifier: "mapItem")
+            
+            annotationView.annotation = item
             let icon = UIImage(named: "ic_placemark")
-            view.image = icon?.scaleImage(toSize: CGSize(width: 15, height: 15))
+            annotationView.image = icon?.scaleImage(toSize: CGSize(width: 15, height: 15))
+            annotationView.clusteringIdentifier = "mapItemClustered"
+            
+            return annotationView
+        } else if let cluster = annotation as? MKClusterAnnotation {
+            let clusterView = mapView.dequeueReusableAnnotationView(withIdentifier: "clusterView")
+            ?? MKAnnotationView(annotation: annotation, reuseIdentifier: "clusterView")
+            
+            clusterView.annotation = cluster
+            let icon = UIImage(named: "ic_app")
+            clusterView.image = icon?.scaleImage(toSize: CGSize(width: 15, height: 15))
+            
+            return clusterView
+        } else {
+            return nil
         }
-        
-        return view
     }
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
