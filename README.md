@@ -1,4 +1,4 @@
-# Flood_Areas - MVMM + Swift + SnapKit + MapKit.
+# Flood_Areas - MVVM + RxSwift + Moya + SnapKit + MapKit.
 A mobile application to display flood areas in New South Wales (NSW), Australia.
 
 ### Run Requirements
