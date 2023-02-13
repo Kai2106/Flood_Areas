@@ -15,12 +15,12 @@ enum Constants {
     // MARK: - Constraint
     static let MARGIN_ZERO = CGFloat(0)
     
+    static let MARGIN_TOP_SMALL = CGFloat(4)
+    
     static let MARGIN_LEFT = CGFloat(8)
     static let MARGIN_RIGHT = CGFloat(-8)
     static let MARGIN_TOP = CGFloat(8)
     static let MARGIN_BOTTOM = CGFloat(-8)
-    
-    static let MARGIN_TOP_SMALL = CGFloat(4)
     
     // MARK: - Image
     static let imagePlaceHolder = UIImage(named: "ic_placeholder")

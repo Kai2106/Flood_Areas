@@ -5,13 +5,12 @@
 //  Created by KaiNgo on 12/02/2023.
 //
 
-import SVProgressHUD
 import SnapKit
 import RxSwift
 import RxCocoa
 
 // MARK: Setup custom view.
-extension MainViewController: ViewControllerCustomViewProtocol {
+extension MainViewController: ViewFactoryProtocol {
     func setupView() {
         self.view.backgroundColor = .white
         // setup custom view
@@ -57,50 +56,3 @@ extension MainViewController: ViewControllerCustomViewProtocol {
     }
     
 }
-
-// MARK: Setup view controller with view model.
-extension MainViewController: ViewControllerViewModelProtocol {
-    func setupViewModel() {
-        if let input = self.viewModel.input {
-            bindingInput(input: input)
-        }
-        if let output = self.viewModel.output {
-            bindingOutput(output: output)
-        }
-    }
-    
-    private func bindingInput(input: MainViewModel.Input) {
-        // show loading.
-        input.isLoading.asDriver()
-            .drive { loadingData in
-                if loadingData.0 {
-                    SVProgressHUD.show()
-                } else {
-                    SVProgressHUD.dismiss()
-                }
-            }
-            .disposed(by: disposeBag)
-    }
-    
-    private func bindingOutput(output: MainViewModel.Output) {
-        // handle data output.
-        output.floodAreaDataResult
-            .bind { [weak self] result in
-                guard let self = self else { return }
-                switch result {
-                case .ok(data: let data):
-                    AppLog.v("final data: \(data)")
-                    self.listVC.viewModel = ListViewModel(input: ListViewModel.Input(floodAreaData: BehaviorRelay<[Feature]>(value: data.features ?? [])),
-                                                          dependency: AppAPIService())
-                    break
-                case .error(error: let error):
-                    AppLog.v("error: \(error.localizedDescription)")
-                    MessageManager.shared.showMessage(messageType: .error, message: error.localizedDescription)
-                    break
-                }
-            }
-            .disposed(by: disposeBag)
-    }
-}
-
-

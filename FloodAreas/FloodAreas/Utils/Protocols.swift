@@ -8,7 +8,7 @@
 import Foundation
 import RxSwift
 
-protocol ViewControllerCustomViewProtocol {
+protocol ViewFactoryProtocol {
     func setupView()
 }
 

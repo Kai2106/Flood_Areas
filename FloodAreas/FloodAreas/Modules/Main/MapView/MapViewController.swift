@@ -8,8 +8,7 @@
 import UIKit
 import RxSwift
 
-class MapViewController: UIViewController, RxViewController {
-    var disposeBag = DisposeBag()
+class MapViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()

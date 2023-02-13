@@ -29,13 +29,13 @@ struct Feature: Codable {
 
 struct Geometry: Codable {
     var type: String?
-    var coordinates: [Double]?
+    var coordinates: [Float]?
     var collections: [Collection]?
 }
 
 struct Collection: Codable {
     var type: String?
-    var coordinates: [Double]?
+    var coordinates: [Float]?
 }
 
 struct Property: Codable {

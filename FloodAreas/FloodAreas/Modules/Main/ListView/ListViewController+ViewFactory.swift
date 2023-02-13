@@ -11,7 +11,7 @@ import RxCocoa
 import RxDataSources
 
 // MARK: Setup custom view.
-extension ListViewController: ViewControllerCustomViewProtocol {
+extension ListViewController: ViewFactoryProtocol {
     func setupView() {
         setupTableView()
     }
@@ -27,56 +27,3 @@ extension ListViewController: ViewControllerCustomViewProtocol {
         }
     }
 }
-
-// MARK: Setup view controller with view model.
-extension ListViewController: ViewControllerViewModelProtocol {
-    func setupViewModel() {
-        guard let vm = self.viewModel else { return }
-        if let input = vm.input {
-            bindingInput(input: input)
-        }
-        if let output = vm.output {
-            bindingOutput(output: output)
-        }
-    }
-    
-    private func bindingInput(input: ListViewModel.Input) {
-        
-    }
-    
-    private func bindingOutput(output: ListViewModel.Output) {
-        // update tableview data source
-        output.sections.drive(self.tableView.rx.items(dataSource: self.dataSource))
-            .disposed(by: disposeBag)
-    }
-}
-
-// MARK: Setup view controller with list view controller.
-extension ListViewController: ListViewControllerProtocol {
-    func registerCell() {
-        tableView.register(ListTableViewCell.self, forCellReuseIdentifier: ListTableViewCell.cellIdent)
-    }
-    
-    func configDataSource() {
-        // add data source
-        self.dataSource = FloodAreaDatasource(configureCell: { (dataSource, tv, indexPath, data) in
-            let cell: ListTableViewCell = tv.dequeueReusableCell(withIdentifier: ListTableViewCell.cellIdent, for: indexPath) as! ListTableViewCell
-            //cell.delegate = self
-            cell.indexPath = indexPath
-            cell.feature = data
-            
-            return cell
-        }, titleForHeaderInSection: { _,_  -> String? in
-            return ""
-        }, titleForFooterInSection: { _,_  -> String? in
-            return ""
-        }, canEditRowAtIndexPath: { ds,indexPath  -> Bool in
-            return false
-        }, canMoveRowAtIndexPath: {ds,indexPath  -> Bool in
-            return false
-        })
-        
-        //
-    }
-}
-

@@ -9,9 +9,9 @@ import UIKit
 import SnapKit
 import RxSwift
 import RxCocoa
+import SVProgressHUD
 
-class MainViewController: UIViewController, RxViewController {
-    var disposeBag: DisposeBag = DisposeBag()
+class MainViewController: BaseViewController {
     
     lazy var segment: UISegmentedControl = {
         let seg = UISegmentedControl(items: ["Map View", "List View"])
@@ -65,6 +65,54 @@ class MainViewController: UIViewController, RxViewController {
             pageVC.setViewControllers([views[index]], direction: .reverse, animated: true, completion: nil)
         }
         currentPageIndex = index
+    }
+    
+}
+
+// MARK: Setup view controller with view model.
+extension MainViewController: ViewControllerViewModelProtocol {
+    func setupViewModel() {
+        if let input = self.viewModel.input {
+            bindingInput(input: input)
+        }
+        if let output = self.viewModel.output {
+            bindingOutput(output: output)
+        }
+    }
+    
+    private func bindingInput(input: MainViewModel.Input) {
+        // show loading.
+        input.isLoading.asDriver()
+            .drive { loadingData in
+                if loadingData.0 {
+                    SVProgressHUD.show()
+                } else {
+                    SVProgressHUD.dismiss()
+                }
+            }
+            .disposed(by: disposeBag)
+    }
+    
+    private func bindingOutput(output: MainViewModel.Output) {
+        // handle data output.
+        output.floodAreaDataResult
+            .bind { [weak self] result in
+                guard let self = self else { return }
+                switch result {
+                case .ok(data: let data):
+                    AppLog.v("final data: \(data)")
+                    self.listVC.viewModel = ListViewModel(input: ListViewModel.Input(floodAreaData: BehaviorRelay<[Feature]>(value: data.features ?? [])),
+                                                          dependency: AppAPIService())
+                    break
+                case .error(error: let error):
+                    AppLog.e("error: \(error.localizedDescription)")
+                    DispatchQueue.main.async {
+                        MessageManager.shared.showMessage(messageType: .error, message: error.localizedDescription)
+                    }
+                    break
+                }
+            }
+            .disposed(by: disposeBag)
     }
 }
 
