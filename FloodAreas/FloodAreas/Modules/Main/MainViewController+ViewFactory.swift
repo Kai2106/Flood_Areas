@@ -47,9 +47,9 @@ extension MainViewController: ViewFactoryProtocol {
         
         pageVC.view.snp.makeConstraints { make in
             make.top.equalTo(self.segment.snp.bottom).offset(Constants.MARGIN_TOP)
-            make.left.equalToSuperview().offset(Constants.MARGIN_LEFT)
-            make.right.equalToSuperview().offset(Constants.MARGIN_RIGHT)
-            make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom).offset(Constants.MARGIN_BOTTOM)
+            make.left.equalToSuperview().offset(Constants.MARGIN_ZERO)
+            make.right.equalToSuperview().offset(Constants.MARGIN_ZERO)
+            make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom).offset(Constants.MARGIN_ZERO)
         }
         
         self.pageVC.setViewControllers([self.views[0]], direction: .forward, animated: true, completion: nil)

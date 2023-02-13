@@ -103,6 +103,7 @@ extension MainViewController: ViewControllerViewModelProtocol {
                     AppLog.v("final data: \(data)")
                     self.listVC.viewModel = ListViewModel(input: ListViewModel.Input(floodAreaData: BehaviorRelay<[Feature]>(value: data.features ?? [])),
                                                           dependency: AppAPIService())
+                    self.mapVC.viewModel.input?.floodAreaDetail.accept(data.features ?? [])
                     break
                 case .error(error: let error):
                     AppLog.e("error: \(error.localizedDescription)")

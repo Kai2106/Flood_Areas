@@ -66,8 +66,6 @@ class DetailViewController: BaseViewController {
     
     var viewModel: DetailViewModel?
     
-    fileprivate var annotation: MKAnnotation!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -79,25 +77,6 @@ class DetailViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationItem.title = "Detail"
-    }
-    
-    /// Set current coordinate.
-    /// - Parameters:
-    ///   - lat: lat. Float value.
-    ///   - lon: lon. Float value.
-    func showCoordinateAt(lat: Float, lon: Float) {
-        let center = CLLocationCoordinate2D(latitude: CLLocationDegrees(lat), longitude: CLLocationDegrees(lon))
-        
-        let currentRegion = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))
-        self.floodMapView.setRegion(currentRegion, animated: true)
-
-        if !self.floodMapView.annotations.isEmpty {
-            annotation = self.floodMapView.annotations[0]
-            self.floodMapView.removeAnnotation(annotation)
-        }
-        let pointAnnotation = MKPointAnnotation()
-        pointAnnotation.coordinate = CLLocationCoordinate2D(latitude: CLLocationDegrees(lat), longitude: CLLocationDegrees(lon))
-        floodMapView.addAnnotation(pointAnnotation)
     }
 }
 
@@ -122,7 +101,6 @@ extension DetailViewController: ViewControllerViewModelProtocol {
                 self.adviceLabel.text! += data.properties?.adviceA ?? ""
                 self.otherAdviceLabel.text! += data.properties?.otherAdvice ?? ""
                 
-                AppLog.d("Current cor: \(data.geometry?.coordinates)")
                 // show on map.
                 if let coordinates = data.geometry?.coordinates{
                     if coordinates.count < 2 {
@@ -130,7 +108,7 @@ extension DetailViewController: ViewControllerViewModelProtocol {
                     }
                     let long = coordinates[0]
                     let lat = coordinates[1]
-                    self.showCoordinateAt(lat: lat, lon: long)
+                    self.floodMapView.showCoordinateAt(lat: lat, lon: long)
                 }
             }).disposed(by: disposeBag)
     }
@@ -142,11 +120,17 @@ extension DetailViewController: ViewControllerViewModelProtocol {
 extension DetailViewController: MKMapViewDelegate {
     // MARK: - change default icon
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        let annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "annotation")
-        let icon = UIImage(named: "ic_placemark")
-        annotationView.image = icon?.scaleImage(toSize: CGSize(width: 15, height: 15))
-        annotationView.canShowCallout = true
-        return annotationView
+        let identifier = "detailview_annotation"
+        var view: MKPinAnnotationView
+        if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKPinAnnotationView {
+            dequeuedView.annotation = annotation
+            view = dequeuedView
+        } else {
+            view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            let icon = UIImage(named: "ic_placemark")
+            view.image = icon?.scaleImage(toSize: CGSize(width: 15, height: 15))
+        }
+        return view
     }
 }
 

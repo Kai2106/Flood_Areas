@@ -23,6 +23,9 @@
 		D0CC7E92299A4E8D003116A4 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CC7E91299A4E8D003116A4 /* DetailViewModel.swift */; };
 		D0CC7E94299A5C39003116A4 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CC7E93299A5C39003116A4 /* UIImage+Extension.swift */; };
 		D0CC7E98299A6C17003116A4 /* MKMapView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CC7E97299A6C17003116A4 /* MKMapView+Extension.swift */; };
+		D0CC7E9A299A7090003116A4 /* MapViewController+ViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CC7E99299A7090003116A4 /* MapViewController+ViewFactory.swift */; };
+		D0CC7E9C299A70C9003116A4 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CC7E9B299A70C9003116A4 /* MapViewModel.swift */; };
+		D0CC7E9F299A81C8003116A4 /* FloodAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CC7E9E299A81C8003116A4 /* FloodAnnotation.swift */; };
 		D0F8514C2997EA730056FE63 /* AppLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F8514B2997EA730056FE63 /* AppLog.swift */; };
 		D0F8514E2997EAB10056FE63 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F8514D2997EAB10056FE63 /* Date+Extensions.swift */; };
 		D0F851502997EAD60056FE63 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F8514F2997EAD60056FE63 /* Protocols.swift */; };
@@ -85,6 +88,9 @@
 		D0CC7E91299A4E8D003116A4 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		D0CC7E93299A5C39003116A4 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		D0CC7E97299A6C17003116A4 /* MKMapView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKMapView+Extension.swift"; sourceTree = "<group>"; };
+		D0CC7E99299A7090003116A4 /* MapViewController+ViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapViewController+ViewFactory.swift"; sourceTree = "<group>"; };
+		D0CC7E9B299A70C9003116A4 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		D0CC7E9E299A81C8003116A4 /* FloodAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloodAnnotation.swift; sourceTree = "<group>"; };
 		D0F8514B2997EA730056FE63 /* AppLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLog.swift; sourceTree = "<group>"; };
 		D0F8514D2997EAB10056FE63 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		D0F8514F2997EAD60056FE63 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
@@ -164,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				D0F8515C2997F28D0056FE63 /* MainViewModel.swift */,
+				D0CC7E9B299A70C9003116A4 /* MapViewModel.swift */,
 				D0F8516B299921310056FE63 /* ListViewModel.swift */,
 				D0CC7E91299A4E8D003116A4 /* DetailViewModel.swift */,
 			);
@@ -246,6 +253,7 @@
 				D02237A72997C030003886D1 /* Services */,
 				D0F8515E2997F82E0056FE63 /* Managers */,
 				D02237A42997BFA8003886D1 /* Utils */,
+				D0CC7E9D299A81AB003116A4 /* CustomView */,
 				D02237A32997AE66003886D1 /* Extensions */,
 				D02237A22997AE58003886D1 /* Models */,
 				D02237A12997AE4E003886D1 /* ViewModels */,
@@ -289,6 +297,14 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
+		D0CC7E9D299A81AB003116A4 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				D0CC7E9E299A81C8003116A4 /* FloodAnnotation.swift */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
 		D0F851532997ED430056FE63 /* APIs */ = {
 			isa = PBXGroup;
 			children = (
@@ -310,6 +326,7 @@
 			isa = PBXGroup;
 			children = (
 				D0F8516729990B6B0056FE63 /* MapViewController.swift */,
+				D0CC7E99299A7090003116A4 /* MapViewController+ViewFactory.swift */,
 			);
 			path = MapView;
 			sourceTree = "<group>";
@@ -609,6 +626,8 @@
 				D0CC7E98299A6C17003116A4 /* MKMapView+Extension.swift in Sources */,
 				D0F8516A299911AB0056FE63 /* ListViewController+ViewFactory.swift in Sources */,
 				D0CC7E8B299A3321003116A4 /* DetailViewController.swift in Sources */,
+				D0CC7E9A299A7090003116A4 /* MapViewController+ViewFactory.swift in Sources */,
+				D0CC7E9C299A70C9003116A4 /* MapViewModel.swift in Sources */,
 				D0F8514E2997EAB10056FE63 /* Date+Extensions.swift in Sources */,
 				D0F8514C2997EA730056FE63 /* AppLog.swift in Sources */,
 				D0F851572997EE830056FE63 /* CachePolicyPlugin.swift in Sources */,
@@ -617,6 +636,7 @@
 				D0F8516829990B6B0056FE63 /* MapViewController.swift in Sources */,
 				D0F8515D2997F28D0056FE63 /* MainViewModel.swift in Sources */,
 				D0F8516C299921310056FE63 /* ListViewModel.swift in Sources */,
+				D0CC7E9F299A81C8003116A4 /* FloodAnnotation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
