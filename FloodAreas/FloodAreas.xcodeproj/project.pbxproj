@@ -17,6 +17,31 @@
 		D04D5F342990B9EC00902478 /* FloodAreasTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04D5F332990B9EC00902478 /* FloodAreasTests.swift */; };
 		D04D5F3E2990B9EC00902478 /* FloodAreasUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04D5F3D2990B9EC00902478 /* FloodAreasUITests.swift */; };
 		D04D5F402990B9EC00902478 /* FloodAreasUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04D5F3F2990B9EC00902478 /* FloodAreasUITestsLaunchTests.swift */; };
+		D0CC7E8B299A3321003116A4 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CC7E8A299A3321003116A4 /* DetailViewController.swift */; };
+		D0CC7E8D299A334B003116A4 /* DetailViewController+ViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CC7E8C299A334B003116A4 /* DetailViewController+ViewFactory.swift */; };
+		D0CC7E90299A4041003116A4 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CC7E8F299A4041003116A4 /* BaseViewController.swift */; };
+		D0CC7E92299A4E8D003116A4 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CC7E91299A4E8D003116A4 /* DetailViewModel.swift */; };
+		D0CC7E94299A5C39003116A4 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CC7E93299A5C39003116A4 /* UIImage+Extension.swift */; };
+		D0CC7E98299A6C17003116A4 /* MKMapView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CC7E97299A6C17003116A4 /* MKMapView+Extension.swift */; };
+		D0CC7E9A299A7090003116A4 /* MapViewController+ViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CC7E99299A7090003116A4 /* MapViewController+ViewFactory.swift */; };
+		D0CC7E9C299A70C9003116A4 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CC7E9B299A70C9003116A4 /* MapViewModel.swift */; };
+		D0CC7E9F299A81C8003116A4 /* FloodAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CC7E9E299A81C8003116A4 /* FloodAnnotation.swift */; };
+		D0F8514C2997EA730056FE63 /* AppLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F8514B2997EA730056FE63 /* AppLog.swift */; };
+		D0F8514E2997EAB10056FE63 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F8514D2997EAB10056FE63 /* Date+Extensions.swift */; };
+		D0F851502997EAD60056FE63 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F8514F2997EAD60056FE63 /* Protocols.swift */; };
+		D0F851522997ECD10056FE63 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F851512997ECD10056FE63 /* Constants.swift */; };
+		D0F851552997EDB50056FE63 /* AppAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F851542997EDB50056FE63 /* AppAPI.swift */; };
+		D0F851572997EE830056FE63 /* CachePolicyPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F851562997EE830056FE63 /* CachePolicyPlugin.swift */; };
+		D0F851592997EEBC0056FE63 /* AppAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F851582997EEBC0056FE63 /* AppAPIService.swift */; };
+		D0F8515B2997F1760056FE63 /* FloodArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F8515A2997F1760056FE63 /* FloodArea.swift */; };
+		D0F8515D2997F28D0056FE63 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F8515C2997F28D0056FE63 /* MainViewModel.swift */; };
+		D0F851602997F8450056FE63 /* MessageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F8515F2997F8450056FE63 /* MessageManager.swift */; };
+		D0F851622998D82B0056FE63 /* MainViewController+ViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F851612998D82B0056FE63 /* MainViewController+ViewFactory.swift */; };
+		D0F8516629990B530056FE63 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F8516529990B530056FE63 /* ListViewController.swift */; };
+		D0F8516829990B6B0056FE63 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F8516729990B6B0056FE63 /* MapViewController.swift */; };
+		D0F8516A299911AB0056FE63 /* ListViewController+ViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F85169299911AB0056FE63 /* ListViewController+ViewFactory.swift */; };
+		D0F8516C299921310056FE63 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F8516B299921310056FE63 /* ListViewModel.swift */; };
+		D0F8516F299932A30056FE63 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F8516E299932A30056FE63 /* ListTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +82,31 @@
 		D04D5F392990B9EC00902478 /* FloodAreasUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FloodAreasUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D04D5F3D2990B9EC00902478 /* FloodAreasUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloodAreasUITests.swift; sourceTree = "<group>"; };
 		D04D5F3F2990B9EC00902478 /* FloodAreasUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloodAreasUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D0CC7E8A299A3321003116A4 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		D0CC7E8C299A334B003116A4 /* DetailViewController+ViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailViewController+ViewFactory.swift"; sourceTree = "<group>"; };
+		D0CC7E8F299A4041003116A4 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		D0CC7E91299A4E8D003116A4 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		D0CC7E93299A5C39003116A4 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		D0CC7E97299A6C17003116A4 /* MKMapView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKMapView+Extension.swift"; sourceTree = "<group>"; };
+		D0CC7E99299A7090003116A4 /* MapViewController+ViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapViewController+ViewFactory.swift"; sourceTree = "<group>"; };
+		D0CC7E9B299A70C9003116A4 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		D0CC7E9E299A81C8003116A4 /* FloodAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloodAnnotation.swift; sourceTree = "<group>"; };
+		D0F8514B2997EA730056FE63 /* AppLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLog.swift; sourceTree = "<group>"; };
+		D0F8514D2997EAB10056FE63 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
+		D0F8514F2997EAD60056FE63 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		D0F851512997ECD10056FE63 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D0F851542997EDB50056FE63 /* AppAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAPI.swift; sourceTree = "<group>"; };
+		D0F851562997EE830056FE63 /* CachePolicyPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachePolicyPlugin.swift; sourceTree = "<group>"; };
+		D0F851582997EEBC0056FE63 /* AppAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAPIService.swift; sourceTree = "<group>"; };
+		D0F8515A2997F1760056FE63 /* FloodArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloodArea.swift; sourceTree = "<group>"; };
+		D0F8515C2997F28D0056FE63 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		D0F8515F2997F8450056FE63 /* MessageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageManager.swift; sourceTree = "<group>"; };
+		D0F851612998D82B0056FE63 /* MainViewController+ViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+ViewFactory.swift"; sourceTree = "<group>"; };
+		D0F8516529990B530056FE63 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		D0F8516729990B6B0056FE63 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		D0F85169299911AB0056FE63 /* ListViewController+ViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListViewController+ViewFactory.swift"; sourceTree = "<group>"; };
+		D0F8516B299921310056FE63 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
+		D0F8516E299932A30056FE63 /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +149,10 @@
 		D022379F2997AE28003886D1 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				D0F851642998D8F70056FE63 /* ListView */,
+				D0F851632998D8EE0056FE63 /* MapView */,
 				D04D5F202990B9E900902478 /* MainViewController.swift */,
+				D0F851612998D82B0056FE63 /* MainViewController+ViewFactory.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -107,6 +160,8 @@
 		D02237A02997AE2C003886D1 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				D0CC7E8A299A3321003116A4 /* DetailViewController.swift */,
+				D0CC7E8C299A334B003116A4 /* DetailViewController+ViewFactory.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -114,6 +169,10 @@
 		D02237A12997AE4E003886D1 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				D0F8515C2997F28D0056FE63 /* MainViewModel.swift */,
+				D0CC7E9B299A70C9003116A4 /* MapViewModel.swift */,
+				D0F8516B299921310056FE63 /* ListViewModel.swift */,
+				D0CC7E91299A4E8D003116A4 /* DetailViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -121,6 +180,7 @@
 		D02237A22997AE58003886D1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D0F8515A2997F1760056FE63 /* FloodArea.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -128,6 +188,9 @@
 		D02237A32997AE66003886D1 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				D0F8514D2997EAB10056FE63 /* Date+Extensions.swift */,
+				D0CC7E93299A5C39003116A4 /* UIImage+Extension.swift */,
+				D0CC7E97299A6C17003116A4 /* MKMapView+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -135,6 +198,9 @@
 		D02237A42997BFA8003886D1 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				D0F8514B2997EA730056FE63 /* AppLog.swift */,
+				D0F8514F2997EAD60056FE63 /* Protocols.swift */,
+				D0F851512997ECD10056FE63 /* Constants.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -150,6 +216,7 @@
 		D02237A72997C030003886D1 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				D0F851582997EEBC0056FE63 /* AppAPIService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -181,8 +248,12 @@
 			children = (
 				D04D5F4C2990BD0300902478 /* App */,
 				D02237A62997BFE7003886D1 /* Resources */,
+				D0CC7E8E299A402F003116A4 /* Base */,
+				D0F851532997ED430056FE63 /* APIs */,
 				D02237A72997C030003886D1 /* Services */,
+				D0F8515E2997F82E0056FE63 /* Managers */,
 				D02237A42997BFA8003886D1 /* Utils */,
+				D0CC7E9D299A81AB003116A4 /* CustomView */,
 				D02237A32997AE66003886D1 /* Extensions */,
 				D02237A22997AE58003886D1 /* Models */,
 				D02237A12997AE4E003886D1 /* ViewModels */,
@@ -216,6 +287,66 @@
 				D04D5F272990B9EC00902478 /* LaunchScreen.storyboard */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		D0CC7E8E299A402F003116A4 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				D0CC7E8F299A4041003116A4 /* BaseViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		D0CC7E9D299A81AB003116A4 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				D0CC7E9E299A81C8003116A4 /* FloodAnnotation.swift */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
+		D0F851532997ED430056FE63 /* APIs */ = {
+			isa = PBXGroup;
+			children = (
+				D0F851542997EDB50056FE63 /* AppAPI.swift */,
+				D0F851562997EE830056FE63 /* CachePolicyPlugin.swift */,
+			);
+			path = APIs;
+			sourceTree = "<group>";
+		};
+		D0F8515E2997F82E0056FE63 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				D0F8515F2997F8450056FE63 /* MessageManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		D0F851632998D8EE0056FE63 /* MapView */ = {
+			isa = PBXGroup;
+			children = (
+				D0F8516729990B6B0056FE63 /* MapViewController.swift */,
+				D0CC7E99299A7090003116A4 /* MapViewController+ViewFactory.swift */,
+			);
+			path = MapView;
+			sourceTree = "<group>";
+		};
+		D0F851642998D8F70056FE63 /* ListView */ = {
+			isa = PBXGroup;
+			children = (
+				D0F8516D299931B90056FE63 /* Cell */,
+				D0F8516529990B530056FE63 /* ListViewController.swift */,
+				D0F85169299911AB0056FE63 /* ListViewController+ViewFactory.swift */,
+			);
+			path = ListView;
+			sourceTree = "<group>";
+		};
+		D0F8516D299931B90056FE63 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				D0F8516E299932A30056FE63 /* ListTableViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		D262F6230C4D2FE96283E021 /* Pods */ = {
@@ -479,8 +610,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0F851502997EAD60056FE63 /* Protocols.swift in Sources */,
+				D0CC7E8D299A334B003116A4 /* DetailViewController+ViewFactory.swift in Sources */,
+				D0F8515B2997F1760056FE63 /* FloodArea.swift in Sources */,
+				D0F851592997EEBC0056FE63 /* AppAPIService.swift in Sources */,
+				D0F8516629990B530056FE63 /* ListViewController.swift in Sources */,
+				D0CC7E90299A4041003116A4 /* BaseViewController.swift in Sources */,
+				D0F851602997F8450056FE63 /* MessageManager.swift in Sources */,
+				D0F8516F299932A30056FE63 /* ListTableViewCell.swift in Sources */,
+				D0F851622998D82B0056FE63 /* MainViewController+ViewFactory.swift in Sources */,
+				D0CC7E94299A5C39003116A4 /* UIImage+Extension.swift in Sources */,
+				D0CC7E92299A4E8D003116A4 /* DetailViewModel.swift in Sources */,
+				D0F851552997EDB50056FE63 /* AppAPI.swift in Sources */,
 				D04D5F212990B9E900902478 /* MainViewController.swift in Sources */,
+				D0CC7E98299A6C17003116A4 /* MKMapView+Extension.swift in Sources */,
+				D0F8516A299911AB0056FE63 /* ListViewController+ViewFactory.swift in Sources */,
+				D0CC7E8B299A3321003116A4 /* DetailViewController.swift in Sources */,
+				D0CC7E9A299A7090003116A4 /* MapViewController+ViewFactory.swift in Sources */,
+				D0CC7E9C299A70C9003116A4 /* MapViewModel.swift in Sources */,
+				D0F8514E2997EAB10056FE63 /* Date+Extensions.swift in Sources */,
+				D0F8514C2997EA730056FE63 /* AppLog.swift in Sources */,
+				D0F851572997EE830056FE63 /* CachePolicyPlugin.swift in Sources */,
 				D04D5F1D2990B9E900902478 /* AppDelegate.swift in Sources */,
+				D0F851522997ECD10056FE63 /* Constants.swift in Sources */,
+				D0F8516829990B6B0056FE63 /* MapViewController.swift in Sources */,
+				D0F8515D2997F28D0056FE63 /* MainViewModel.swift in Sources */,
+				D0F8516C299921310056FE63 /* ListViewModel.swift in Sources */,
+				D0CC7E9F299A81C8003116A4 /* FloodAnnotation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
